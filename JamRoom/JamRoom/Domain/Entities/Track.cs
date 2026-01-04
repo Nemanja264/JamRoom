@@ -1,13 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace JamRoom.Models
+namespace JamRoom.Domain.Entities
 {
     public class Track
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Title { get; set; } = "";
-        [Required]
-        public string Url { get; set; } = "";
+        
+        public required string Url { get; set; }
         public string Author { get; set; } = "";
         public ICollection<Vote> Likes { get; set; } = new List<Vote>();
     }

@@ -1,13 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 
-namespace JamRoom.Models
+namespace JamRoom.Domain.Entities
 {
     public class Vote
     {
-        public int Id { get; set; }
-        public int TrackId { get; set; }
-        public required string UserId { get; set; }
+        public Guid Id { get; set; }
+        public Guid TrackId { get; set; }
+        public Track Track { get; set; } = default!;
+        public Guid UserId { get; set; }
+        public User User { get; set; } = default!;
+
         public DateTime CreatedAtUtc { get; set; } = DateTime.UtcNow;
     }
 }
