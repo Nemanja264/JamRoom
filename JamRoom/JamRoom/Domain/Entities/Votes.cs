@@ -5,7 +5,6 @@ namespace JamRoom.Domain.Entities
 {
     public class Vote
     {
-        public Guid Id { get; set; }
         public Guid TrackId { get; set; }
         public Track Track { get; set; } = default!;
         public Guid UserId { get; set; }

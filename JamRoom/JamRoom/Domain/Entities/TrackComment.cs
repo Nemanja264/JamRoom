@@ -2,10 +2,13 @@
 {
     public class TrackComment
     {
-        public int Id { get; set; }
-        public int TrackId { get; set; }
+        public Guid Id { get; set; }
+        public Guid TrackId { get; set; }
+        public Track Track { get; set; } = default!;
         public Guid UserId { get; set; }
+        public User User { get; set; } = default!;
 
         public string Comment { get; set; } = "";
+        public DateTime CreatedAtUtc { get; set; } = DateTime.UtcNow;
     }
 }
