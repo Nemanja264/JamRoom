@@ -1,7 +1,12 @@
+using JamRoom.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<JamRoomDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("JamRoomDb")));
 
 var app = builder.Build();
 
